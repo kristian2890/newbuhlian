@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+			    <h2 class="heading text-center">Case Study: The Effect of Product Descriptions</h2>
+			    <div class="project-intro text-center">
+					<p class="mb-0 lead">Evaluating the impact of none vs perfect product descriptions on conversion rate performance.</p>
+				</div>
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
+		    <div class="container">
+			    {% comment %} <div class="project-meta theme-bg-light p-4">
+				    <div class="row g-4 g-lg-5">
+					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
+					    </div><!--//col-->
+						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
+						    <div class="client-info">
+							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
+							    <ul class="client-meta list-unstyled">
+								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
+								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
+								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
+								    
+							    </ul>
+							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+							    <h4 class="subheading mb-3">Project Requirements</h4>
+							    <ul class="mb-0">
+								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
+								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
+							    </ul>
+						    </div><!--//client-info-->					
+						</div><!--//col-->
+				    </div><!--//row-->
+				</div><!--//project-meta--> {% endcomment %}
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Project Overview</h3>
+					    <p>
+							In general, product descriptions and images are very important elements in a well-working webshop. 
+							On the product detail page, the user needs to be reaffirmed that the initial interest in the product can be converted into an actual action of adding the product to the cart.
+							Optimizing the product descriptions is key focus area for improving performance of a webshop.
+						</p>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Challenge</h3>
+					    <p>
+							As an e-commerce platform with a huge volume of products from a broad range of partners, Miinto is particularly challenged by the diverse quality of product descriptions. 
+							In fact, <a href="./datascience-nps-drivers">product descriptions and images is the second most important driver of Miinto's onsite NPS</a>.
+							On Miinto, all product descriptions originate from the partners' systems as a default. But due to very high variations in the quality of product descriptions in the diffferent systems, 
+							Thus, Miinto has taken on the task of manually updating of a selection of key products to optimize the product info on each of these product variants (descriptions, images etc.).
+							With this manual update these product descriptions become as close to perfect as possible given the available information, Miinto can enrich the products with - this group of products have what I will reference as <b>perfect product descriptions</b> in the below analysis.
+							<br>
+							<br>
+							In early 2021, Miinto was forced to change a range of product descriptions due to warnings from Google crawlers. 
+							As a result, a range of products were forced to first get their product descriptions removed for an extended period before the issue was resolved and new product descriptions could be uploaded.
+							Although a critical situation, this also offered an opportunity to effectively estimate the negative effect of having no product descriptions at all - i.e. this provides us with a case study of products I will reference as having <b>no product descriptions</b> in the below analysis. 
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
+					    <p>Given the two extreme groups of products defined above, I was able to do the data analysis to estimate the effect of product descriptions. 
+							For the group of products with <b>perfect product descriptions</b>, data on pageviews and transactions were extracted for each of the products for a 6 months period across all Miinto sites. 
+							For the group of products with <b>no product descriptions</b>, data on pageviews and transactions for each product were extracted before, during and after the removal of product descriptions. 
+							In both cases, the average conversion rate of each product group was compared with the overall product conversion rate on the Miinto platform. 
+							This way, we are able to estimate the effect of the product descriptions compared to the average Miinto product - i.e. the average product description. 
+							This approach will also diminish the effect of other factors such as stock, discount etc.   
+							 </p>
+					    <div class="row mt-5">
+						    <div class="col-12 col-lg-12 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_productdescr.jpg' %}" alt="image">
+						    </div>
+						    <!-- <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/project-figure-2.jpg' %}" alt="image">
+						    </div> -->
+					    </div>
+						    					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">The Results</h3>
+					     
+					     <div class="metrics mb-4">
+						     <div class="row">
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">No Product Descr.</div>
+									     <div class="metric-data mb-2">-16%</div>
+									     <div class="metric-desc">Product Conversion Rate</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Perfect Product Descr.</div>
+									     <div class="metric-data mb-2">+16%</div>
+									     <div class="metric-desc">Product Conversion Rate</div>
+								     </div>
+							     </div><!--//metric-->
+							     <!-- <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Sales Generated</div>
+									     <div class="metric-data mb-2">$130K</div>
+									     <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
+								     </div>
+							     </div>//metric -->
+							     <!-- <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Overall Cost</div>
+									     <div class="metric-data mb-2">20% <span class="unit">down</span></div>
+									     <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
+								     </div>
+							     </div>//metric -->
+						     </div><!--//row-->
+					     </div><!--//metrics-->
+					     
+					    <p>
+							Given the above data extraction, I could effectively estimate the effect of the quality of product descriptions on the product conversion rate. 
+							For the group of products with <b>no product descriptions</b> the average product conversion rate was <b>-16%</b> lower compared to the average product on the Miinto platform. 
+							In contrast, the group of products with <b>perfect product descriptions</b> had a <b>+16%</b> higher conversion rate compared to the average Miinto product. 
+							Based on these insights, the operations team in Miinto could effectively priotitize to (1) quickly resolve any future Google crawler issues to reduce the negative effects of having products with no product descriptions on the platform, 
+							and (2) allocate the prober ressources for expanding and accelerate the efforts of optimizing the product description - thereby increase the share of products with perfect product descriptsions.
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					{% comment %} <div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                    </div><!--//project-section-->
+				    <div class="client-quote">
+						<div class="quote-holder">
+							<blockquote class="quote-content">
+								Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
+							</blockquote>
+							<i class="fas fa-quote-left"></i>
+						</div><!--//quote-holder-->
+						<div class="source-holder">
+							<div class="source-profile">
+								<img src="{% static '/images/clients/profile-4.png' %}" alt="image"/>
+							</div>
+							<div class="meta">
+								<div class="name">James Lee</div>
+								<div class="info">Product Manager, Amazon</div>
+							</div>
+						</div>
+					</div> {% endcomment %}
+				</div>
+		    </div>
+	    </section>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center" style='margin-bottom:0px !important;'>
+		    <div class="container single-col-max-width">
+				<h2 class="title">Want to connect?</h2>
+			    <p>Please feel free to reach out, if you are interested in knowing more about me and my projects or want to connect and hear how I might help your organization.</p>                <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+    
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+
+    </div><!--//main-wrapper-->
+
+{% endblock content %}

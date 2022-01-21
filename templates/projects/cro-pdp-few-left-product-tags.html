@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+			    <h2 class="heading text-center">Case Study: Few Left Product Tags</h2>
+			    <div class="project-intro text-center">
+					<p class="mb-0 lead">Improving the user behavior and conversion rates on the Miinto e-commerce platform by igniting a sense of urgency on the product detail page.</p>
+				</div>
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
+		    <div class="container">
+			    {% comment %} <div class="project-meta theme-bg-light p-4">
+				    <div class="row g-4 g-lg-5">
+					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
+					    </div><!--//col-->
+						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
+						    <div class="client-info">
+							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
+							    <ul class="client-meta list-unstyled">
+								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
+								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
+								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
+								    
+							    </ul>
+							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+							    <h4 class="subheading mb-3">Project Requirements</h4>
+							    <ul class="mb-0">
+								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
+								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
+							    </ul>
+						    </div><!--//client-info-->					
+						</div><!--//col-->
+				    </div><!--//row-->
+				</div><!--//project-meta--> {% endcomment %}
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Project Overview</h3>
+					    <p>On the Miinto e-commerce platform, the activation of users is a key optimization focus as it improves the relevance of the site and drives more insights and potential revenue. 
+							The key activation on the product detail page is the add-to-cart event - i.e. where the users selects a product size and adds the product to their cart. This behavior is highly correlated with the actual conversion rate, thus by improving the former we will also drive more revenue.
+						    As a result, I did a product detail page analysis to identify ways to improve the primary objective of increasing the add-to-cart rate. </p>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Challenge</h3>
+					    <p>From the product detail page analysis, it was clear that users do not realize if one or more product sizes are low in stock, and thus do not proceed to add the product to the cart before their size become unavailable.
+							The case of product detail pageviews where at least one size of the product is low in stock make up a high share of all product detail pageview sessions. Thus the potential value of solving this issue is significant.
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
+					    <p>To proceed with the project, I defined the following hypothesis: <b>Addding “Few left” tags on the product page will improve conversion rate</b>. By displaying info on the stock level up front for the user, you ignite a sense of urgency in the user that translates into action if relevant.
+							To test this hypothesis, I developed a test variant of the product detail page with the addition of "Few Left" tags in the sticky cta section and on the upper-right corner of the primary product image.
+							Below you can see examples of the control and test variant for the test.</p>
+					    <div class="row mt-5">
+						    <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_fewleft_control.jpg' %}" alt="image">
+						    </div>
+						    <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_fewleft_variation.jpg' %}" alt="image">
+						    </div>
+					    </div>
+						    
+					    <p>The test was targeted at the miinto.se site, for mobile users only and only set to be activated if the specific product had minimum one size with a low stock indicator (in the size dropdown).</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">The Results</h3>
+					     
+					     <div class="metrics mb-4">
+						     <div class="row">
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Volume</div>
+									     <div class="metric-data mb-2">+881K</div>
+									     <div class="metric-desc">Test Sessions</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: A2C</div>
+									     <div class="metric-data mb-2">+7%</div>
+									     <div class="metric-desc">Add to Cart Rate Uplift</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: CR</div>
+									     <div class="metric-data mb-2">+6%</div>
+									     <div class="metric-desc">Conversion Rate Uplift</div>
+								     </div>
+							     </div><!--//metric-->
+							    {% comment %} <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+										<div class="metric-name">Effect</div>
+										<div class="metric-data mb-2">+6%</div>
+										<div class="metric-desc">Conversion Rate Uplift</div>
+								     </div>
+							     </div><!--//metric--> {% endcomment %}
+						     </div><!--//row-->
+					     </div><!--//metrics-->
+					     
+					    <p>With more than 881.000 test sessions, the proved significant in lifting the conversion rate (<b>+6%</b>) and the add to cart rate (<b>+7%</b>) - i.e. the hypothesis could be accepted. 
+							With these performance uplifts, a full implementation of the "Few Left" product tag feature on all Miinto websites would drive an estimated +7-10M EUR GOV annually - all of this with minimal development required as the feature can be activted directly from the frontend. 
+							As a result, this feature has been added for the Miinto tech roadmap awaiting deployment in the upcoming future. 
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					{% comment %} <div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                    </div><!--//project-section-->
+				    <div class="client-quote">
+						<div class="quote-holder">
+							<blockquote class="quote-content">
+								Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
+							</blockquote>
+							<i class="fas fa-quote-left"></i>
+						</div><!--//quote-holder-->
+						<div class="source-holder">
+							<div class="source-profile">
+								<img src="{% static '/images/clients/profile-4.png' %}" alt="image"/>
+							</div>
+							<div class="meta">
+								<div class="name">James Lee</div>
+								<div class="info">Product Manager, Amazon</div>
+							</div>
+						</div>
+					</div> {% endcomment %}
+				</div>
+		    </div>
+	    </section>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center" style='margin-bottom:0px !important;'>
+		    <div class="container single-col-max-width">
+				<h2 class="title">Want to connect?</h2>
+			    <p>Please feel free to reach out, if you are interested in knowing more about me and my projects or want to connect and hear how I might help your organization.</p>                <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+    
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+
+    </div><!--//main-wrapper-->
+
+{% endblock content %}

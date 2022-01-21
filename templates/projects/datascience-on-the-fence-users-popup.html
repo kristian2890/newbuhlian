@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+			    <h2 class="heading text-center">Case Study: "On the Fence"-Users Popup</h2>
+			    <div class="project-intro text-center">
+					<p class="mb-0 lead">Minimizing abandoned carts with a machine-learning-model-based, highly targeted exit-intent popup.</p>
+				</div>
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
+		    <div class="container">
+			    {% comment %} <div class="project-meta theme-bg-light p-4">
+				    <div class="row g-4 g-lg-5">
+					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
+					    </div><!--//col-->
+						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
+						    <div class="client-info">
+							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
+							    <ul class="client-meta list-unstyled">
+								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
+								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
+								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
+								    
+							    </ul>
+							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+							    <h4 class="subheading mb-3">Project Requirements</h4>
+							    <ul class="mb-0">
+								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
+								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
+							    </ul>
+						    </div><!--//client-info-->					
+						</div><!--//col-->
+				    </div><!--//row-->
+				</div><!--//project-meta--> {% endcomment %}
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Project Overview</h3>
+					    <p>
+							As much as <a href="https://d34w0339mx0ifp.cloudfront.net/content/2021_Ecommerce_Stats_Trends_Report_EN.pdf"><b>81%</b></a> of all website users abandon their online purchase after adding some item(s) to their cart. This is called the cart abandonment rate. 
+							This rate is a critical focus point for everyone trying to optimize their ecommerce performance. By lowering this rate, you are keeping the most relevant users on your site, thus increasing the chance they will complete their purchase and minimizing the risk that you will lose them to a competitor.
+							In other words, we need to maintain these on-the-fence users.
+						</p>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Challenge</h3>
+					    <p>
+							But how do you reduce the cart abandonment rate. One way to is to implement a exit-intent popup providing some relevant information that makes the user stay on the site. 
+							However, defining such a feature without disturbing the users is a difficult task. Several questions arise: 
+							<i><ul>
+								<li>How do you define the timing of the trigger to launch the popup just exactly when the user is about to leave the site?</li>
+								<li>How do you target the most relevant users only?</li>
+								<li>What information can you highlight for the user in the popup, that will make him/her stay on the site and complete their order? </li>
+							</ul></i>
+
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
+					    <p>
+							To try to answer some of these questions, I started a project at Miinto to help keep the most relevant users on the site. 
+							The project evolved around a trigger-based popup providing the following message: <i>Wait... You have products in your cart waiting for you! Get 10% extra discount on your next purchase if you buy within the next 60 minutes.</i>
+							The popup also displays the voucher code directly for the user. With this message in place, I just needed to define the triggering rules for the popup. 
+							<br>
+							<br>
+							To only target the most relevant users, I decided to use in-session hit-level Google Analytics data from Google Bigquery to identify the most relevant behavioral patterns. 
+							To this identification, I defined an in-session purchase probability model, in which I for each user session I could predict if the session would end in a purchase or not. 
+							As inputs to this random forest model, I defined a long range of different user behaviors (fx using the navigation, making an onsite search, #clicked products from a product list, etc.).
+							After adjusting the model, it ended with an accuracy of +90%. From the feature importance measures, I could then derive the most important features for predicting if an user would end his/her session with a purchase. 
+							In addition to having a product in their cart, the two other features with the highest contribution to the predicition were (1) the number of products viewed during the session and (2) the session duration.
+							Next step was then to do a partial dependence plot between these two features and the predicted probability of purchase in each session. You can see the modeled relationship between these variables in the picture below. 
+							Both features show a S-shaped relationship with the purchase probability - thus, I could now easily define a threshold with which the popup could be triggered. 
+							
+						
+
+						</p>
+					    <div class="row mt-5">
+						    <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_otf_model.jpg' %}" alt="image">
+						    </div>
+						    <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_otf_ss.jpg' %}" alt="image">
+						    </div>
+					    </div>
+
+						<p>
+							With the model in place, I then had to add one additional trigger required to be activated before the popup can be launched: <b>the exit-intent</b>.
+							This is a rather simple trigger to define for desktop; when you leave the viewport with your mouse, the popup should trigger. However, on mobile the exit-intent is more difficult to assess. 
+							I found that a particular pattern of scrolling on mobile do tend to correlate with an exit event. Thus, if the user first scrolls far down a page on mobile, followed by scrolling back up by 50%, then the popup should trigger.
+							As a result, this was the final list of triggers that all have to met before the popup could be activated - The user has...: 
+							<i><ul>
+								<li>...minimum one product in the cart.</li>
+								<li>...been on the site for minimum four minutes.</li>
+								<li>...viewed at least seven product pages.</li>
+								<li>...shown exit intent.</li>
+							</ul></i>
+							These criteria heavily reduce the sessions that qualify for the popup, which exactly is the purpose, when we are providing a voucher code directly for the user. The popup is thus highly targeted at the most relevant users.
+							To test the impact of the popup, I decided to A/B-test it, meaning that only 50% of sessions that qualify for the popup would actually get it. 
+						</p>
+
+						    					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">The Results</h3>
+					     
+					     <div class="metrics mb-4">
+						     <div class="row">
+							     <div class="metric col-6 col-xl-2 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Volume</div>
+									     <div class="metric-data mb-2">12K</div>
+									     <div class="metric-desc">Test Sessions</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-2 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: CR</div>
+									     <div class="metric-data mb-2">+53%</div>
+									     <div class="metric-desc">Conversion Rate Uplift</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-2 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: Site Usage</div>
+									     <div class="metric-data mb-2">+33%</div>
+									     <div class="metric-desc">Longer Session Duration</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-2 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: Site Usage</div>
+									     <div class="metric-data mb-2">+43%</div>
+									     <div class="metric-desc">More Pageviews per Session</div>
+								     </div>
+							     </div><!--//metric-->
+								 <div class="metric col-6 col-xl-2 mb-3">
+									<div class="inner p-3 theme-bg-light">
+										<div class="metric-name">Effect: Order</div>
+										<div class="metric-data mb-2">+11%</div>
+										<div class="metric-desc">More Products per Order</div>
+									</div>
+								</div><!--//metric-->
+								<div class="metric col-6 col-xl-2 mb-3">
+									<div class="inner p-3 theme-bg-light">
+										<div class="metric-name">Effect: Order</div>
+										<div class="metric-data mb-2">+19%</div>
+										<div class="metric-desc">Higher AOV</div>
+									</div>
+								</div><!--//metric-->
+						     </div><!--//row-->
+					     </div><!--//metrics-->
+					     
+					    <p>
+							With the highly targeted triggering-rules, the volume of sessions qualifying for the test was not great compared to other splittests. 
+							However, the results was magnificient. When comparing the control and the test group, the popup had significant impact across all relevant parameters. 
+							The popup drove higher conversion rate, better engagement with the site, and more value from the orders. 
+							The only downside to this feature, is that it also drives a higher usage rate of voucher codes which in this case eats a good margin of the commission rate. 
+							Thus future iterations of this feature, must test other information messages and/or lower voucher code values. In addition, the behavioral triggers can be strengthened to allow even fewer relevant users.
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					{% comment %} <div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                    </div><!--//project-section-->
+				    <div class="client-quote">
+						<div class="quote-holder">
+							<blockquote class="quote-content">
+								Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
+							</blockquote>
+							<i class="fas fa-quote-left"></i>
+						</div><!--//quote-holder-->
+						<div class="source-holder">
+							<div class="source-profile">
+								<img src="{% static '/images/clients/profile-4.png' %}" alt="image"/>
+							</div>
+							<div class="meta">
+								<div class="name">James Lee</div>
+								<div class="info">Product Manager, Amazon</div>
+							</div>
+						</div>
+					</div> {% endcomment %}
+				</div>
+		    </div>
+	    </section>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center" style='margin-bottom:0px !important;'>
+		    <div class="container single-col-max-width">
+				<h2 class="title">Want to connect?</h2>
+			    <p>Please feel free to reach out, if you are interested in knowing more about me and my projects or want to connect and hear how I might help your organization.</p>
+                <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+    
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+
+    </div><!--//main-wrapper-->
+
+{% endblock content %}

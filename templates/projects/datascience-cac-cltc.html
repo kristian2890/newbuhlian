@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+			    <h2 class="heading text-center">Case Study: Customer Lifetime Value</h2>
+			    <div class="project-intro text-center">
+					<p class="mb-0 lead">Modeling Customer Lifetime Value to optimize marketing spend while respecting longterm profitability.</p>
+				</div>
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
+		    <div class="container">
+			    {% comment %} <div class="project-meta theme-bg-light p-4">
+				    <div class="row g-4 g-lg-5">
+					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
+					    </div><!--//col-->
+						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
+						    <div class="client-info">
+							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
+							    <ul class="client-meta list-unstyled">
+								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
+								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
+								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
+								    
+							    </ul>
+							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+							    <h4 class="subheading mb-3">Project Requirements</h4>
+							    <ul class="mb-0">
+								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
+								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
+							    </ul>
+						    </div><!--//client-info-->					
+						</div><!--//col-->
+				    </div><!--//row-->
+				</div><!--//project-meta--> {% endcomment %}
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Project Overview</h3>
+					    <p>
+							Knowing the value of ones customers is a key focus area for any company. Usually this valuation is derived from a customer lifetime value (clv) model, that predicts the value of a customer in a given lifetime span. 
+							By estimating the clv, a company can balance its current expenditures with the future value of its customers. Thus, it is a crucial tool for growing a business while respecting long-term profitability. 
+						</p>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Challenge</h3>
+					    <p>
+							But estimating the clv is not easy. Many complex models can be used for this, however usually these models do not allow for the user to derive what actually contributes to the different developments in the clv. 
+							Furthermore, the scopes by which these models can be used varies alot from company to company. At Miinto, the scopes should both include an overall strategic level in terms of budget planning and assessment, as well as a more operational scope, in which the digital marketing should be able to use the model to daily balance their marketing spend according to the clv. 
+							So, with the need for this explainability of the model as well as the different scopes by which the model should be used, I needed to come up with a simpler approach to the clv model. 
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
+					    <p>
+							I ended up defining a rather complex formula for the clv, however with full transparency into its parameters. Thus, the final model included three overall parameters: 
+							<ol>
+								<li>
+									<b>Initial Commission</b>: The first order of a customer is a good indication of his/hers future engagement with Miinto. Thus, we are using the commission of the first order as the first parameter of the model. 
+								</li>
+								<li>
+									<b>Lifetime Profit</b>: To get an estimate of the lifetime value, we use the monthly cohort from 12 months ago, and how these customers' transactional history at Miinto has developed. This way, we can estimate what profit we would gain for the new customer coming in the current cohort - I here use the historical profit in 12 months as a share of the first order value to get a relative estimate for the newer cohorts. 
+								</li>
+								<li>
+									<b>YoY Uplift Factor</b>: Given the year over year development is a crucial indicator for future performance, a factor was defined to accommodate a growing trend over time.
+								</li>
+							</ol>
+
+							Adding these three components gives us the per customer clv. To further enhance the usability of the model, I also setup customer acquision cost (cac) formula, with which we are then able to compare the difference between what Miinto is paying for a new customer vs. what Miinto is expected to derive from such customer in a 12 months lifetime span. 
+						</p>
+					    <div class="row mt-5">
+						    <div class="col-12 col-lg-12 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_clv.jpg' %}" alt="image">
+						    </div>
+						    <!-- <div class="col-12 col-lg-6 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/project-figure-2.jpg' %}" alt="image">
+						    </div> -->
+					    </div>
+						    
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">The Results</h3>
+					     
+					     <div class="metrics mb-4">
+						     <div class="row">
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Volume</div>
+									     <div class="metric-data mb-2">13</div>
+									     <div class="metric-desc">Markets</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Performance</div>
+									     <div class="metric-data mb-2">2.5%</div>
+									     <div class="metric-desc">Difference in predicted vs actual clv</div>
+								     </div>
+							     </div><!--//metric-->
+						     </div><!--//row-->
+					     </div><!--//metrics-->
+					    <p>
+							Once defined, the model was developed and deployed to all 13 markets. The reporting of the model was setup in PowerBI with which the digital marketing can monitor and adjust their daily spend levels to respect the longterm profitability. 
+							Furthermore, c-level can now follow the performance of the business and better understand and set future budget targets and KPIs. Thus, the model is a key point of departure at weekly and monthly performance meetings. 
+							With the three clearly defined parameters, everyone in the organization with access to the report can always drill down in the model's clv estimates and see what factor is contributing to the changes in their values. 
+							Finally, the report was furthermore enhanced with a historical comparison of the predicted 12 months clv and the actual 12 months clv of historical cohorts. With this addition, the accuracy of the model was measured as only having a 2.5% discrepancy between prediciton and actual clv - i.e. a clear proof of the quality of the model. 
+							This quality proof was further supported, when Boston Consulting Group did a diagnostic audit of the Miinto business model, in which they acknowledged the models validity and Miinto's usage hereof.
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">Testimonial</h3>
+                    </div><!--//project-section-->
+				    <div class="client-quote">
+						<div class="quote-holder">
+							<blockquote class="quote-content">
+								[Miinto's CAC vs CLTC Model] is a great and sophisticated tool for monitoring strategic direction & wether profitability is overall on the right track.
+							</blockquote>
+							<i class="fas fa-quote-left"></i>
+						</div><!--//quote-holder-->
+						<div class="source-holder">
+							<div class="source-profile">
+								<img src="{% static '/images/project/bcg.jpg' %}" alt="image"/>
+							</div>
+							<div class="meta">
+								<div class="name">Miinto Growth Diagnostics Report</div> 
+								<div class="info">Boston Consulting Group</div>
+							</div>
+						</div>
+					</div> 
+				</div>
+		    </div>
+	    </section>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center" style='margin-bottom:0px !important;'>
+		    <div class="container single-col-max-width">
+				<h2 class="title">Want to connect?</h2>
+			    <p>Please feel free to reach out, if you are interested in knowing more about me and my projects or want to connect and hear how I might help your organization.</p>                <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+    
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+
+    </div><!--//main-wrapper-->
+
+{% endblock content %}

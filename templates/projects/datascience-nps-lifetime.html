@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+			    <h2 class="heading text-center">Case Study: NPS Lifetime Model</h2>
+			    <div class="project-intro text-center">
+					<p class="mb-0 lead">
+						Estimating the monetary value of customer experience based on NPS survey data - i.e. a NPS Lifetime Model.
+					</p>
+				</div>
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
+		    <div class="container">
+			    {% comment %} <div class="project-meta theme-bg-light p-4">
+				    <div class="row g-4 g-lg-5">
+					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
+					    </div><!--//col-->
+						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
+						    <div class="client-info">
+							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
+							    <ul class="client-meta list-unstyled">
+								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
+								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
+								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
+								    
+							    </ul>
+							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+							    <h4 class="subheading mb-3">Project Requirements</h4>
+							    <ul class="mb-0">
+								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
+								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
+							    </ul>
+						    </div><!--//client-info-->					
+						</div><!--//col-->
+				    </div><!--//row-->
+				</div><!--//project-meta--> {% endcomment %}
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Project Overview</h3>
+					    <p>
+							Customer experience is a key focus for all companies today. Happy customers are said to be valuable and more loyal over time. But how much value does a good vs a bad customer experience actually translates to? 
+							For Miinto, I set out to estimate this value.
+						</p>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Challenge</h3>
+					    <p>
+							Without knowing the actual value of a happy vs a non-happy customer, it is difficult to prioritize and allocate ressources to features and projects that are primarily focusing on customer experience and less on harder KPIs like GOV, Conversion Rate and Average Order Value. 
+							However, the notion of happiness or experience is a very subjective thing to measure. What makes one customer happy might not generalize to all customers, and it might be difficult to pinpoint exact features that help improve the onsite experience. 
+							Thus, I needed a solid dataset with the ability to measure the non-tangible notion of customer experience to be able to measure and evaluate its impact.  
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
+					    <p>
+							For this purpose, I used the onsite and post-purchase Net Promoter Score (NPS) survey data. The NPS framework is wellknown and tested across all categories. 
+							The framework is based on a simple question: <i>"How likely are you to recommend < brand > to family and friends?"</i> 
+							The customer is then able to answer on a 10 points scale. Based on their answer, the framework allocates the customer to one of three segments:
+							<ul>
+								<li><b>Promoters:</b> the happy customers of a company. This group is more likely to stay loyal to the brand and actively lure new customers to the brand by recommendations.</li>
+								<li><b>Passives:</b> the neutral group of customers - this group is not enough engaged with the brand to make active recommendations. The value of these customers is expected to remain modest over time. </li>
+								<li><b>Detractors:</b> the non-happy customers which are less likely to recommend the brand to others. Thus, this group will be less likely to stay loyal to the brand and will most likely not lure new customers to the company.</li>
+							</ul>
+
+							 						</p>
+					    <div class="row mt-5">
+						    <div class="col-12 col-lg-12 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_npslifetime3.png' %}" alt="image">
+						    </div>
+					    </div>    
+					    <p>
+							Based on this segmentation of customers, we can compare the impact of happy vs neutral vs unhappy customers of brand - and combined with transactional data on each of these customers, we can estimate the impact the customer experience has on the customer lifetime value.
+							This comparison is exactly what you see in the chart below - here I compare the average, incremental GOV development of each segment over a lifetime of 12 months from their original order. 
+							Not surprisingly, we see that the promoters are way more valuable than both the passives and detractors over time. Thus, the notion of customer experience is greatly related to the actual value, we derive from the customer and how engaged they are with the brand.
+						</p>
+						<div class="row mt-5">
+						    <div class="col-12 col-lg-15 mb-5">
+							    <img class="img-fluid rounded" src="{% static '/images/project/pic_npslifetime2.jpg' %}" alt="image">
+						    </div>
+					    </div>
+					</div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">The Results</h3>
+					     
+					     <div class="metrics mb-4">
+						     <div class="row">
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Volume</div>
+									     <div class="metric-data mb-2">+200K</div>
+									     <div class="metric-desc">NPS Respondents</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: Orders Uplift</div>
+									     <div class="metric-data mb-2">+77%</div>
+									     <div class="metric-desc">More Promoter vs Detractor Orders in 12M</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: GOV Uplift</div>
+									     <div class="metric-data mb-2">+70%</div>
+									     <div class="metric-desc">More Promoter vs Detractor GOV in 12M</div>
+								     </div>
+							     </div><!--//metric-->
+							     <div class="metric col-6 col-xl-3 mb-3">
+								     <div class="inner p-3 theme-bg-light">
+									     <div class="metric-name">Effect: Profit Uplift</div>
+									     <div class="metric-data mb-2">+90%</div>
+									     <div class="metric-desc">More Promoter vs Detractor Profit in 12M</div>
+								     </div>
+							     </div><!--//metric-->
+						     </div><!--//row-->
+					     </div><!--//metrics-->
+					     
+					    <p>
+							Based on the NPS lifetime model described above, I was able to put a value on the impact of customer experience by comparing the three NPS segments and their transactional lifetimes at Miinto.
+							The model is based on more than 200.000 respondents originating from two NPS-surveys and ranging 13 different markets. 
+							Given the model, I am able to estimate the effect of converting detractors into promoters. This conversion drives +77% more orders over the 12 month lifetime. 
+							Furthermore, it also results in an average uplift in GOV of +70% and in Profit of +90% over the 12 month lifetime at Miinto. 
+							Thus, <b>converting a detractor to a promoter will almost double the profitablity of that customer in a 12 month lifetime</b>.
+							With these insights, the operations team can now more effectively allocate ressources to customer experience projects, as they now have a clear valuation of the relationship between customer experience and business performance.
+						</p>
+					     
+					</div><!--//project-section-->
+					
+					{% comment %} <div class="project-section mb-5">
+					     <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                    </div><!--//project-section-->
+				    <div class="client-quote">
+						<div class="quote-holder">
+							<blockquote class="quote-content">
+								Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
+							</blockquote>
+							<i class="fas fa-quote-left"></i>
+						</div><!--//quote-holder-->
+						<div class="source-holder">
+							<div class="source-profile">
+								<img src="{% static '/images/clients/profile-4.png' %}" alt="image"/>
+							</div>
+							<div class="meta">
+								<div class="name">James Lee</div>
+								<div class="info">Product Manager, Amazon</div>
+							</div>
+						</div>
+					</div> {% endcomment %}
+				</div>
+		    </div>
+	    </section>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center" style='margin-bottom:0px !important;'>
+		    <div class="container single-col-max-width">
+				<h2 class="title">Want to connect?</h2>
+			    <p>Please feel free to reach out, if you are interested in knowing more about me and my projects or want to connect and hear how I might help your organization.</p>                <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+    
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+
+    </div><!--//main-wrapper-->
+
+{% endblock content %}

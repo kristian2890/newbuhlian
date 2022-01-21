@@ -1,0 +1,312 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container text-center single-col-max-width">
+			    <h2 class="heading">Portfolio</h2>
+			    <div class="intro">
+			    <p>Welcome to my online portfolio. Here you can see a short description and the main results of some of my professional projects.  
+					Please feel free to reach out, if you are interested in knowing more about me and my projects, or if you want to connect and share knowledge. 
+					</p>
+			    </div>
+			    <a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a>
+			    
+			    
+		    </div><!--//container-->
+	    </section>
+	    <section class="projects-list px-3 py-5 p-md-5">
+		    <div class="container">
+			    <div class="text-center">
+				    <ul id="filters" class="filters mb-5 mx-auto   ps-0">
+		                <li class="type active mb-3 mb-lg-0" data-filter="*">All</li>
+		                <li class="type  mb-3 mb-lg-0" data-filter=".cro">CRO</li>
+		                <li class="type  mb-3 mb-lg-0" data-filter=".datascience">Data Science</li>
+		                <li class="type  mb-3 mb-lg-0" data-filter=".web">Web</li>
+		                {% comment %} <li class="type  mb-3 mb-lg-0" data-filter=".backend">Backend</li> {% endcomment %}
+		            </ul><!--//filters-->
+			    </div>
+	            
+			    <div class="project-cards row isotope">
+					<div class="isotope-item col-md-6 mb-5 web">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/WEB_cookie.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 3-->
+										<h5 class="card-title"><a href="project/web-data-privacy-engineering" class="theme-link">GTM Data Privacy Engineering</a></h5>
+										<p class="card-text">Implementing a compliant Google Tag Manager (GTM) setup while using Server Side GTM for minimizing data loss in Google Analytics.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Startup Hub</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/web-data-privacy-engineering"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/web-data-privacy-engineering">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 cro">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/CRO_fewleft.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 0-->
+										<h5 class="card-title"><a href="project/cro-pdp-few-left-product-tags" class="theme-link">Few Left Product Tags</a></h5>
+										<p class="card-text">Improving the user behavior and conversion rates on the Miinto e-commerce platform by igniting a sense of urgency on the product detail page.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Google</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/cro-pdp-few-left-product-tags"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/cro-pdp-few-left-product-tags">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 datascience">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/DS_npslifetime.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 5-->
+										<h5 class="card-title"><a href="project/datascience-nps-lifetime" class="theme-link">NPS Lifetime Model</a></h5>
+										<p class="card-text">Estimating the monetary value of customer experience based on NPS survey data - i.e. a NPS Lifetime Model. </p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Uber</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/datascience-nps-lifetime"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/datascience-nps-lifetime">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					
+					<div class="isotope-item col-md-6 mb-5 datascience">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/DS_cltc.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 4-->
+										<h5 class="card-title"><a href="project/datascience-cac-cltc" class="theme-link">Customer Lifetime Model</a></h5>
+										<p class="card-text">Modeling Customer Lifetime Value to optimize marketing spend while respecting longterm profitability.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: SalesForce</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/datascience-cac-cltc"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/datascience-cac-cltc">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 cro datascience web">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/DS_otfpopup.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body">  <!--//project 8-->
+										<h5 class="card-title"><a href="project/datascience-on-the-fence-users-popup" class="theme-link">"On the Fence"-Users Popup</a></h5>
+										<p class="card-text">Minimizing abandoned carts with a machine-learning-model-based, highly targeted exit-intent popup.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: GitLab</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/datascience-on-the-fence-users-popup"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/datascience-on-the-fence-users-popup">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					
+
+					<div class="isotope-item col-md-6 mb-5 cro">	
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/CRO_voucher.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 1-->
+										<h5 class="card-title"><a href="project/cro-voucher-test" class="theme-link">Voucher Highlight Test</a></h5>
+										<p class="card-text">Improving campaign performance by testing ways of highlighting the onsite voucher code.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Dropbox</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/cro-voucher-test"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/cro-voucher-test">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+
+					<div class="isotope-item col-md-6 mb-5 datascience cro">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/DS_productdescr.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body">  <!--//project 7-->
+										<h5 class="card-title"><a href="project/datascience-product-descriptions" class="theme-link">The Effect of Product Descriptions</a></h5>
+										<p class="card-text">Evaluating the impact of none vs perfect product descriptions on conversion rate performance.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: GitLab</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/datascience-product-descriptions"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/datascience-product-descriptions">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 webapp datascience">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/DS_npsdriver.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body">  <!--//project 6-->
+										<h5 class="card-title"><a href="project/datascience-nps-drivers" class="theme-link">NPS Driver Model</a></h5>
+										<p class="card-text">Using machine learning to model and identify key drivers for optimization of Onsite Net Promoter Score.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Lyft</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/datascience-nps-drivers"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/datascience-nps-drivers">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 cro">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/CRO_urgencycheckout.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body">  <!--//project 14-->
+										<h5 class="card-title"><a href="project/cro-checkout-urgency-message" class="theme-link">Checkout Urgency Message</a></h5>
+										<p class="card-text">Optimizing conversion rate by igniting a sense of urgency in the checkout.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: GitLab</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/cro-checkout-urgency-message"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/cro-checkout-urgency-message">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 cro">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/CRO_urgencycheckout.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body">  <!--//project 14-->
+										<h5 class="card-title"><a href="project/cro-a2r-recommendation-popup" class="theme-link">A2C Recom. Popup</a></h5>
+										<p class="card-text">Improving performance by triggering relevant popup on add to cart event.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: GitLab</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/cro-a2r-recommendation-popup"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/cro-a2r-recommendation-popup">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+					<div class="isotope-item col-md-6 mb-5 cro">
+						<div class="card project-card">
+							<div class="row">
+								<div class="col-12 col-xl-5 card-img-holder">
+									<img src="{% static '/images/project/CRO_stickycta.jpg' %}" class="card-img" alt="image">
+								</div>
+								<div class="col-12 col-xl-7">
+									<div class="card-body"> <!--//project 2-->
+										<h5 class="card-title"><a href="project/cro-pdp-sticky-cta" class="theme-link">PDP Sticky CTA</a></h5>
+										<p class="card-text">Improving user activation on product detail page by highlighting the key objective with a sticky add to cart section.</p>
+										{% comment %} <p class="card-text"><small class="text-muted">Client: Google</small></p> {% endcomment %}
+									</div>
+								</div>
+							</div>
+							<div class="link-mask">
+								<a class="link-mask-link" href="project/cro-pdp-sticky-cta"></a>
+								<div class="link-mask-text">
+									<a class="btn btn-secondary" href="project/cro-pdp-sticky-cta">
+										<i class="fas fa-eye me-2"></i>View Case Study
+									</a>
+								</div>
+							</div><!--//link-mask-->
+						</div><!--//card-->
+					</div><!--//col-->
+				</div><!--//row-->
+			
+		    </div>
+	    </section>
+		{% comment %} <footer class="footer text-center py-4">
+					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer> {% endcomment %}
+    </div><!--//main-wrapper-->
+
+{% endblock content %}
