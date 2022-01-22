@@ -1,143 +1,94 @@
-
-# ULTIMATE gitignore list: 
-
-
-
-# Django #
-*.log
-*.pot
-*.pyc
-__pycache__
+bin/
+include/
+pip-selfcheck.json
 db.sqlite3
-#media
 
-# Backup files # 
-*.bak 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# If you are using PyCharm # 
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
+# C extensions
+*.so
 
-# AWS User-specific
-.idea/**/aws.xml
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Generated files
-.idea/**/contentModel.xml
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
 
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
 
-# File-based project format
-*.iws
+# Translations
+*.mo
+*.pot
 
-# IntelliJ
-out/
+# Django stuff:
+*.log
+local_settings.py
 
-# JIRA plugin
-atlassian-ide-plugin.xml
+# Flask stuff:
+instance/
+.webassets-cache
 
-# Python # 
-*.py[cod] 
-*$py.class 
+# Scrapy stuff:
+.scrapy
 
-# Distribution / packaging 
-.Python build/ 
-develop-eggs/ 
-dist/ 
-downloads/ 
-eggs/ 
-.eggs/ 
-lib/ 
-lib64/ 
-parts/ 
-sdist/ 
-var/ 
-wheels/ 
-*.egg-info/ 
-.installed.cfg 
-*.egg 
-*.manifest 
-*.spec 
+# Sphinx documentation
+docs/_build/
 
-# Installer logs 
-pip-log.txt 
-pip-delete-this-directory.txt 
+# PyBuilder
+target/
 
-# Unit test / coverage reports 
-htmlcov/ 
-.tox/ 
-.coverage 
-.coverage.* 
-.cache 
-.pytest_cache/ 
-nosetests.xml 
-coverage.xml 
-*.cover 
-.hypothesis/ 
+# IPython Notebook
+.ipynb_checkpoints
 
-# Jupyter Notebook 
-.ipynb_checkpoints 
+# pyenv
+.python-version
 
-# pyenv 
-.python-version 
+# celery beat schedule file
+celerybeat-schedule
 
-# celery 
-celerybeat-schedule.* 
+# dotenv
+.env
 
-# SageMath parsed files 
-*.sage.py 
+# virtualenv
+venv/
+ENV/
 
-# Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
+# Spyder project settings
+.spyderproject
 
-# mkdocs documentation 
-/site 
-
-# mypy 
-.mypy_cache/ 
-
-# Sublime Text # 
-*.tmlanguage.cache 
-*.tmPreferences.cache 
-*.stTheme.cache 
-*.sublime-workspace 
-*.sublime-project 
-
-# sftp configuration file 
-sftp-config.json 
-
-# Package control specific files Package 
-Control.last-run 
-Control.ca-list 
-Control.ca-bundle 
-Control.system-ca-bundle 
-GitHub.sublime-settings 
-
-# Visual Studio Code # 
-.vscode/* 
-!.vscode/settings.json 
-!.vscode/tasks.json 
-!.vscode/launch.json 
-!.vscode/extensions.json 
-.history
-
+# Rope project settings
+.ropeproject
