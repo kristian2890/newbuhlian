@@ -53,6 +53,12 @@ def bloghome(request):
 def blogpost(request, id, title):
     post = get_object_or_404(Post, id=id)
 
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thank you for subscribing!')
+
     context = {
         'destination' : 'blog',
         'post' : post,

@@ -7,7 +7,7 @@
     <div class="main-wrapper">
 	    <section class="cta-section theme-bg-light py-5">
 		    <div class="container single-col-max-width">
-			    <h2 class="heading text-center">Case Study: GTM Data Privacy Engineering</h2>
+			    <h2 class="heading text-center">Case Study: Data Privacy Engineering</h2>
 			    <div class="project-intro text-center">
 					<p class="mb-0 lead">Implementing a compliant Google Tag Manager (GTM) setup while using Server Side GTM for minimizing data loss in Google Analytics.</p>
 				</div>
@@ -16,32 +16,7 @@
 	    </section>
 	    <section class="project px-3 py-5 p-md-5" style='padding-top: 0px !important;padding-bottom: 0px !important;'>
 		    <div class="container">
-			    {% comment %} <div class="project-meta theme-bg-light p-4">
-				    <div class="row g-4 g-lg-5">
-					    <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
-					        <img class="project-thumb img-fluid rounded" src="{% static '/images/project/project-3.jpg' %}" alt="">
-					    </div><!--//col-->
-						<div class="col-12 col-md-7 col-lg-8 col-xxl-9">
-						    <div class="client-info">
-							    <h3 class="client-name font-weight-bold mb-4">Client Name</h3>
-							    <ul class="client-meta list-unstyled">
-								    <li class="mb-2"><i class="fas fa-industry fa-fw me-2"></i><strong>Industry:</strong> Tech</li>
-								    <li class="mb-2"><i class="fas fa-users fa-fw me-2"></i><strong>Size:</strong> 100+</li>
-								    <li class="mb-2"><strong><i class="fas fa-link fa-fw me-2"></i>Website:</strong> <a class="theme-link" href="#">clientsite.com</a></li>
-								    
-							    </ul>
-							    <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
-							    <h4 class="subheading mb-3">Project Requirements</h4>
-							    <ul class="mb-0">
-								    <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-								    <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
-								    <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
-							    </ul>
-						    </div><!--//client-info-->					
-						</div><!--//col-->
-				    </div><!--//row-->
-				</div><!--//project-meta--> {% endcomment %}
-				<div class="project-sections py-5">
+			    <div class="project-sections py-5">
 					<div class="project-section mb-5">
 					    <h3 class="project-section-title mb-3">Project Overview</h3>
 					    <p>
@@ -54,14 +29,14 @@
 					<div class="project-section mb-5">
 					     <h3 class="project-section-title">The Challenge</h3>
 					    <p>
-							At Miinto (as for a lot of other ecommerce companies), this data privacy wave is a critical challenge for the digital data collection and general performance of the platform. 
+							At Miinto (as for a lot of other ecommerce companies), this data privacy wave is a critical challenge for the digital data collection and general performance/experience of the platform. 
 							In fact, this trend had us face two different problems to solve. 
 							<ol>
 								<li>
 									First of all, we needed to setup and implement a cookie consent management system. 
-									Here, we chose CookieInformation to handle the consents, whereas we ourselves had to setup their cookie consent popup and the in the source code and implement control mechanisms for the related restrictions on tags and cookies in Google Tag Manager (GTM). 
+									Here, we chose an external partner to handle the consents. However, we ourselves had to setup the cookie consent popup and implement control mechanisms for the related restrictions on tags and cookies in Google Tag Manager (GTM). 
 									</li>
-								<li>Second of all, we needed to figure out how to prevent a damaging data loss in Google Analytics, which in it self will have critical impact on Miinto's ability to optimize the platform's performance and get insights on the users usage of its websites. 
+								<li>Second of all, we needed to figure out how to prevent a damaging data loss in Google Analytics due to rejection of consent, which in it self will have critical impact on Miinto's ability to optimize the platform's performance and get insights on the users behavior on and usage of its sites. 
 									</li>
 							</ol>
 						</p>
@@ -72,7 +47,7 @@
 					     <h3 class="project-section-title">The Approach &amp; Solution</h3>
 					    <p>
 							Given these challenges, we started the development of a compliant solution to respect the Miinto users' data privacy. Given the first challenge, we decided to use google consent mode to control the activation of any Google-related tags in GTM. 
-							For none-Google-related tags, we used CookieInformation's template triggers to make third-party tags (like Facebook, Hotjar etc.) to only get triggered, if the proper consent was granted by the user. Thus
+							For none-Google-related tags, we designed a trigger template to make third-party tags (like Facebook, Hotjar etc.) to only get triggered, if the proper consent was granted by the user. Thus
 							<br>
 							<br>
 							For the second challenge, the issue is more complex. Luckily, Miinto has a fully-functioning GTM Server Side setup, which means the data hits are not send directly to the Google Analytics (GA) server. They are first send to Miinto's own server, which acts as an inbetween instance to handle these request before sending them to the proper endpoints (fx Google Analytics). 
@@ -86,22 +61,22 @@
 								<li>
 									However, if the user has not granted the proper consent, then the hit is handled by the custom template itself.
 									This means, that the regular GA cookie will not be allowed to be written to the browser. As a result, we have to use a different user identifier to ascribe to the data hit. 
-									For this new identifier, we are using the anonymized IP address of the data hit as well as the user agent string containing detailed information of the device of the hit. 
+									For this new identifier, we use the anonymized IP address of the data hit as well as the user agent string containing detailed information of the device of the hit. 
 									The combination and hashing of these data points is then used by the client as the new user id, which is added to the data hit before it is send to the GA server. 
-									This way, we are able to prevent any data loss, as none-consent users are properly anonymized before include in the GA data on the GA server. 
+									This way, we are able to prevent any data loss, as none-consent users are properly anonymized before included in the GA data on the GA server. 
 									
 								</li>
 							</ol> 
 							
-							Thus, if you vitis a Miinto site today, you will initially see a cookie consent prompt. If you select "Reject all" cookies, you will see only a few necessary cookies being placed in your browser (not including any Google or third-party related cookies). However, the behavior you have on the site will be collected under an anonymized user identifier before shared with the GA server.
+							Thus, if you visit a Miinto site today, you will initially see a cookie consent prompt. 
+							If you select "Reject all" cookies, you will see only a few necessary cookies being placed in your browser (not including any Google or third-party related cookies). 
+							However, the behavior you have on the site will be collected under an anonymized user identifier before shared with the GA server.
 						</p>
 					    <div class="row mt-5">
 						    <div class="col-12 col-lg-12 mb-5">
 							    <img class="img-fluid rounded" src="{% static '/images/project/pic_cookies.JPG' %}" alt="image">
 						    </div>
-						    <!-- <div class="col-12 col-lg-6 mb-5">
-							    <img class="img-fluid rounded" src="{% static '/images/project/project-figure-2.jpg' %}" alt="image">
-						    </div> -->
+						    
 					    </div>
 						    
 
@@ -129,20 +104,6 @@
 									     <div class="metric-desc">Data Recovery</div>
 								     </div>
 							     </div><!--//metric-->
-							     <!-- <div class="metric col-6 col-xl-3 mb-3">
-								     <div class="inner p-3 theme-bg-light">
-									     <div class="metric-name">Sales Generated</div>
-									     <div class="metric-data mb-2">$130K</div>
-									     <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
-								     </div>
-							     </div>//metric -->
-							     <!-- <div class="metric col-6 col-xl-3 mb-3">
-								     <div class="inner p-3 theme-bg-light">
-									     <div class="metric-name">Overall Cost</div>
-									     <div class="metric-data mb-2">20% <span class="unit">down</span></div>
-									     <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
-								     </div>
-							     </div>//metric -->
 						     </div><!--//row-->
 					     </div><!--//metrics-->
 					     
@@ -154,27 +115,7 @@
 						</p>
 					     
 					</div><!--//project-section-->
-					
-					{% comment %} <div class="project-section mb-5">
-					     <h3 class="project-section-title mb-3">Client Testimonial</h3>
-                    </div><!--//project-section-->
-				    <div class="client-quote">
-						<div class="quote-holder">
-							<blockquote class="quote-content">
-								Simon is a brilliant software engineer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
-							</blockquote>
-							<i class="fas fa-quote-left"></i>
-						</div><!--//quote-holder-->
-						<div class="source-holder">
-							<div class="source-profile">
-								<img src="{% static '/images/clients/profile-4.png' %}" alt="image"/>
-							</div>
-							<div class="meta">
-								<div class="name">James Lee</div>
-								<div class="info">Product Manager, Amazon</div>
-							</div>
-						</div>
-					</div> {% endcomment %}
+
 				</div>
 		    </div>
 	    </section>
@@ -186,11 +127,6 @@
                 <div class="text-center"><a class="btn btn-primary" href="/contact" target="_blank"><i class="fas fa-paper-plane me-2"></i>Contact Me</a></div>
 		    </div><!--//container-->
 	    </section><!--//promo-section-->
-    
-		{% comment %} <footer class="footer text-center py-4">
-					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
-				</footer> {% endcomment %}
-
     </div><!--//main-wrapper-->
 
 {% endblock content %}

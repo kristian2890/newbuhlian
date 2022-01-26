@@ -38,6 +38,35 @@
 		    </div><!--//container-->
 	    </article>
 	    
+
+		<section class="cta-section theme-bg-light py-5">
+		    <div class="container text-center">
+			    <h4 class="heading">Want more?</h4>
+			    <div class="intro" style='padding-left:5%;padding-right:5%;'> 
+									<div class="intro" id="subscribetext"> Subscribe to get my latest posts in your inbox.</div></div>
+			    <div class="single-form-max-width pt-3 mx-auto">
+				    <form action='' method='POST' class="signup-form row g-2 g-lg-2 align-items-center">
+						{% csrf_token %}
+						{% if messages %}
+							<div class="messages">
+								{% for message in messages %}
+								<span  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </span>
+								{% endfor %}
+							</div>
+						{% else %}
+	                    <div class="col-12 col-md-9">
+	                        <label class="sr-only" for="semail">Your email</label>
+	                        <input type="email" id="semail" name="email" class="form-control me-md-1 semail" placeholder="Enter email" required> 
+	                     </div>
+	                    <div class="col-12 col-md-2">
+	                        <button type="submit" class="btn btn-primary">Subscribe</button>
+	                    </div>
+						{% endif %}
+	                </form><!--//signup-form-->
+			    </div><!--//single-form-max-width-->
+		    </div><!--//container-->
+	    </section>
+
 	    
 	    {% comment %} <footer class="footer text-center py-4">
 					<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
