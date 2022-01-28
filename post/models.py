@@ -36,7 +36,7 @@ class Post(models.Model):
     content = tinymce_models.HTMLField('Content')
 
     def get_readtime(self):
-      result = readtime.of_text(self.overview)
+      result = readtime.of_text(self.content)
       return result.text 
 
     def __str__(self):
