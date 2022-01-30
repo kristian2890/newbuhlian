@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     'post',
     'tinymce',
-
     # Media Cloudinary
     'cloudinary',
     'cloudinary_storage',
