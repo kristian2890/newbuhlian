@@ -133,6 +133,8 @@ def project13(request):
 def project15(request):
     return(render(request, 'projects/cro-a2r-recommendation-popup.html', ))
 
+def cookiepolicy(request):
+    return(render(request, 'cookiepolicy.html', ))
 
 # def services(request):
 #     context = {

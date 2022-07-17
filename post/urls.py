@@ -25,6 +25,7 @@ urlpatterns = [
     path('portfolio/project/datascience-on-the-fence-users-popup', project8, name='project8'),
     path('portfolio/project/cro-checkout-urgency-message', project13, name='project13'),
     path('portfolio/project/cro-a2r-recommendation-popup', project15, name='project15'),
+    path('cookie-policy', cookiepolicy, name='cookiepolicy'),
 
 ]  
 
