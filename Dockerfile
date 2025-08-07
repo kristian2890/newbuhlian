@@ -21,17 +21,12 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the rest of the code
 COPY . .
 
-# Make sure manage.py is in /app
-ENV DJANGO_SETTINGS_MODULE=blog.settings
-RUN ls -l /app/manage.py
-
-RUN python manage.py help
-
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
 # Expose port (default for Gunicorn)
 EXPOSE 8000
+
 
 # Run migrations and start server
 CMD ["sh", "-c", "python manage.py migrate && gunicorn blog.wsgi:application --bind 0.0.0.0:8000 --log-file -"]
