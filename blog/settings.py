@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # https 
 #if not DEBUG:
 #    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -97,6 +97,8 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #         }
 #     }
 
+# add this
+import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL'),
@@ -105,8 +107,7 @@ DATABASES = {
     )
 }
 
-# add this
-import dj_database_url
+
 #db_from_env = dj_database_url.config()
 #DATABASES['default'].update(db_from_env)
 
