@@ -28,4 +28,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8001
 
 # Run migrations and start server
-CMD ["python manage.py migrate && gunicorn blog.wsgi:application --bind 0.0.0.0:8001 --log-file"]
+CMD ["gunicorn", "blog.wsgi:application", "--bind", "0.0.0.0:8001"]
