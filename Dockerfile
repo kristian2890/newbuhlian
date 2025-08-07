@@ -31,4 +31,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8001
 
 # Run migrations and start server
-CMD ["gunicorn", "blog.wsgi:application", "--bind", "0.0.0.0:8001"]
+CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn blog.wsgi:application --bind 0.0.0.0:8001"]
