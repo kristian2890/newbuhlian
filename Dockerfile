@@ -24,6 +24,8 @@ COPY . .
 # Make sure manage.py is in /app
 RUN ls -l /app/manage.py
 
+RUN python manage.py help
+
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
