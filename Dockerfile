@@ -8,6 +8,9 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /app
 
+# Arguments needed at build-time, to be provided by Coolify
+ARG DATABASE_URL
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
