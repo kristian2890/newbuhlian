@@ -18,17 +18,17 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Copy project files
+# Copy the rest of the code
 COPY . .
+
+# Make sure manage.py is in /app
+RUN ls -l /app/manage.py
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
 # Expose port (default for Gunicorn)
 EXPOSE 8000
-
-# Healthcheck (optional, but good for Coolify)
-HEALTHCHECK CMD curl --fail http://localhost:8000/ || exit 1
 
 # Run migrations and start server
 CMD ["sh", "-c", "python manage.py migrate && gunicorn blog.wsgi:application --bind 0.0.0.0:8000 --log-file -"]
