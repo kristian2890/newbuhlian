@@ -25,8 +25,7 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 
 # Expose port (default for Gunicorn)
-EXPOSE 8000
-
+EXPOSE 8001
 
 # Run migrations and start server
-CMD ["sh", "-c", "python manage.py migrate && gunicorn blog.wsgi:application --bind 0.0.0.0:8000 --log-file -"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn blog.wsgi:application --bind 0.0.0.0:8001 --log-file"]
