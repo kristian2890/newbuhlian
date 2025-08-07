@@ -13,6 +13,7 @@ import cloudinary
 import cloudinary_storage
 from pathlib import Path
 import os
+from decouple import config, Csv
 import environ
 env = environ.Env()
 environ.Env.read_env()
@@ -26,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('DJANGO_SECRET_KEY') 
+SECRET_KEY = config('DJANGO_SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = tuple(env.list('DJANGO_ALLOWED_HOSTS'))  #["127.0.0.1"] #
+ALLOWED_HOSTS = ['0.0.0.0']  #["127.0.0.1"] #
 
 
 # Application definition
@@ -155,9 +156,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env('C_CLOUDNAME') ,
-    'API_KEY': env('C_APIKEY') ,
-    'API_SECRET': env('C_APISECRET') ,
+    'CLOUD_NAME': config('C_CLOUDNAME') ,
+    'API_KEY': config('C_APIKEY') ,
+    'API_SECRET': config('C_APISECRET') ,
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
