@@ -22,6 +22,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 # Make sure manage.py is in /app
+ENV DJANGO_SETTINGS_MODULE=blog.settings
 RUN ls -l /app/manage.py
 
 RUN python manage.py help
