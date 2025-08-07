@@ -99,9 +99,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 # add this
 import dj_database_url
+
+DATABASE_URL = config('DATABASE_URL')
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL'),
+        default=DATABASE_URL,
         conn_max_age=600,
         conn_health_checks=True,
     )
